@@ -1,4 +1,4 @@
-FROM base:2.4.5
+FROM spark-base:2.4.5
 
 COPY start-master.sh /
 
