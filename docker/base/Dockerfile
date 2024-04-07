@@ -1,7 +1,7 @@
 FROM alpine:3.11.3
 
-ENV SPARK_VERSION=2.4.5
-ENV HADOOP_VERSION=2.7
+ENV SPARK_VERSION=3.5.1
+ENV HADOOP_VERSION=3
 ENV SPARK_HOME=/spark
 
 RUN apk add --no-cache curl wget tar ca-certificates bash jq openjdk11 python3 py-pip nss libc6-compat \

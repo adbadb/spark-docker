@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   spark-master:
-    image: adbadb/spark-master:2.4.5
+    image: adbadb/spark-master:3.5.1
     ports:
       - "9090:8080"
       - "7077:7077"
@@ -11,15 +11,15 @@ services:
     environment:
       - "SPARK_LOCAL_IP=spark-master"
   spark-worker:
-    image: adbadb/spark-worker:2.4.5
+    image: adbadb/spark-worker:3.5.1
     depends_on:
       - spark-master
     environment:
       - SPARK_MASTER=spark://spark-master:7077
-      - SPARK_WORKER_CORES=1
-      - SPARK_WORKER_MEMORY=1G
-      - SPARK_DRIVER_MEMORY=128m
-      - SPARK_EXECUTOR_MEMORY=256m
+      - SPARK_WORKER_CORES=3
+      - SPARK_WORKER_MEMORY=3G
+      - SPARK_DRIVER_MEMORY=256m
+      - SPARK_EXECUTOR_MEMORY=512m
     volumes:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
