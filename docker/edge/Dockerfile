@@ -1,4 +1,4 @@
-FROM spark-base:3.5.1
+FROM adbadb/spark-base:3.5.1
 
 COPY spark-submit.sh /
 
